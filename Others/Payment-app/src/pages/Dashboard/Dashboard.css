@@ -1,0 +1,132 @@
+body.modal-open {
+  overflow: hidden;
+}
+.dashboardWrapper {
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+  max-width: 100%;
+  margin: 10rem auto;
+  padding: 3rem 2rem;
+  max-height: 100vh;
+  border: 1px solid gray;
+  justify-content: center;
+  /* background: #9fcaed; */
+  color: #000;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.infoWrapper {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 50%;
+}
+.fundAndTransferDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 100%;
+}
+.fundAndTransferDiv h4 {
+  font-size: 1.4rem;
+}
+.btnTransferDiv button {
+  padding: 10px 0.7rem;
+  margin-top: 35px;
+  background: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+.btnTransferDiv button:hover {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+.btnTransferDiv {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.btnTransferDiv button {
+}
+.btnTransferDiv[disabled]:hover {
+  background-color: gray !important;
+  color: white !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+.chartWrapeprDiv {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding: 2rem 2rem 2rem 1rem;
+}
+.Header {
+  display: none;
+}
+.createAndVerifyBankbtnDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.verificationStatusLoaderDiv {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 1180px) {
+  .dashboardWrapper {
+    flex-direction: column-reverse;
+    padding: 0.5rem;
+    margin-top: 5rem;
+  }
+  .infoWrapper {
+    width: 100%;
+  }
+  .informations {
+    font-size: 1.1rem;
+  }
+  .fundAndTransferDiv h4 {
+    font-size: 1.1rem;
+  }
+  .btnTransferDiv button {
+    font-size: 1.2rem;
+    padding: 10px 7px;
+  }
+  .chartWrapeprDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4rem;
+  }
+  .Header {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .btnTransferDiv button {
+    font-size: 0.9rem;
+    padding: 5px 5px;
+  }
+}

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://use.typekit.net/ncu2apn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Capture d’écran 2022-12-01 024708.jpg" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <title>Aurora app, chat , send money </title>
+</head>
+<body>
+  <div x-data="{ show: true }" class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 py-2.5 px-6 sm:px-3.5 sm:before:flex-1" x-show="show">
+   
+  <div class="d-flex">
+    <p style=" font-family: futura-pt,sans-serif;">This website use cookies</p>
+
+ 
+  </div>
+    <div class="flex flex-1 justify-end">
+      <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]" @click="show = false">
+        <span class="sr-only">Dismiss</span>
+        <svg class="h-5 w-5 text-gray-900" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  
+  <style>
+
+    @font-face {
+      font-family: "pretwise";
+      src: url("Prettywise-Medium.ttf");
+
+
+    }
+    a.nav-link{
+      font-family: futura-pt,sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    a{
+      font-family: futura-pt,sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    a.nav-link:hover{
+      border-bottom: 2px solid black;
+    }
+
+    h1#pretty{
+     font-family: 'Tahoma';
+    }
+    body{
+      font-family: 'Tahoma';
+
+    }
+  </style>
+  <div class="relative bg-gray-50">
+    <div class="relative bg-white shadow">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+    <div class="flex items-center justify-between py-6 md:justify-start md:space-x-10">
+    <div class="flex justify-start lg:w-0 lg:flex-1">
+    <a href="#">
+    <span class="sr-only">Aurora-X</span>
+    <img class="h-8 w-auto sm:h-10" src="Capture d’écran 2022-12-01 024708.jpg" alt="">
+    </a>
+    </div>
+    <div class="-my-2 -mr-2 md:hidden">
+  
+    </div>
+
+
+    <nav class="hidden space-x-10 md:flex">
+   
+   
+   
+    <style>
+      #bbtn:hover{
+
+        background-color: #F4F4F6;
+        border: 2px solid #F4F4F6;
+      }
+    </style>
+    <div @click.away="open = false" class="relative" x-data="{ open: false }">
+    <button id="bbtn" @click="open = !open" type="button" class="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900  focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2" aria-expanded="false">
+    <span style="font-family: futura-pt,sans-serif;
+    font-weight: 400;
+    font-style: normal;">
+    Features
+  </span>
+    <!--
+    Heroicon name: mini/chevron-down
+    
+    Item active: "text-gray-600", Item inactive: "text-gray-400"
+    -->
+    <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+    </svg>
+    </button>
+    
+    
+    
+   
+    <div class="relative">
+    
+    
+    <span>
+    
+    
+    <div x-show="open" class="absolute z-10 -ml-4 mt-3 w-screen max-w-md transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2">
+    <div style="width: 800px; height:auto;" class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+    <div style="display: flex; flex-direction:row; " class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+    <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="-m-3 flex items-start rounded-lg p-3  ">
+    <!-- Heroicon name: outline/chart-bar -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg>
+    <div class="ml-4">
+    <p class="text-base font-medium text-gray-900">Newspepper</p>
+    <p class="mt-1 text-sm text-gray-500">Be aware of what is happening around you. </p>
+    </div>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+    <!-- Heroicon name: outline/cursor-arrow-rays -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44"><path fill="none" d="M0 0h24v24H0z"/><path d="M20 22H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1zm-1-2V4H5v16h14zM9 6v2a3 3 0 0 0 6 0V6h2v2A5 5 0 0 1 7 8V6h2z"/></svg>
+    <div class="ml-4">
+    <p class="text-base font-medium text-gray-900">Shop</p>
+    <p class="mt-1 text-sm text-gray-500">Buy everything you want for the lowest price.</p>
+    </div>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+    <!-- Heroicon name: outline/shield-check -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-3.5-6H14a.5.5 0 1 0 0-1h-4a2.5 2.5 0 1 1 0-5h1V6h2v2h2.5v2H10a.5.5 0 1 0 0 1h4a2.5 2.5 0 1 1 0 5h-1v2h-2v-2H8.5v-2z"/></svg>
+    <div class="ml-4">
+    <p class="text-base font-medium text-gray-900">Payment</p>
+    <p class="mt-1 text-sm text-gray-500">Transfer money with security</p>
+    </div>
+    </a>
+    
+    <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+    <!-- Heroicon name: outline/squares-2x2 -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.291 20.824L2 22l1.176-5.291A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.956 9.956 0 0 1-4.709-1.176zm.29-2.113l.653.35A7.955 7.955 0 0 0 12 20a8 8 0 1 0-8-8c0 1.334.325 2.618.94 3.766l.349.653-.655 2.947 2.947-.655z"/></svg>
+    <div class="ml-4">
+    <p class="text-base font-medium text-gray-900">Chat</p>
+    <p class="mt-1 text-sm text-gray-500">Connect with your family and friends</p>
+    </div>
+    </a>
+    
+ 
+    </div>
+   
+    </div>
+    </div>
+    </span>
+    
+    </div>
+    </div>
+   
+   
+   
+    
+    
+    <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="nav-link text-base font-medium text-gray-500 hover:text-gray-900">
+      Make your first transfer</a>
+    <a href="docs/iPad – 1.png" class="nav-link text-base font-medium text-gray-500 hover:text-gray-900">Kit for the developers</a>
+    <a href="docs/Présentation2.pptx" class="nav-link text-base font-medium text-gray-500 hover:text-gray-900">Privacy & Security</a>
+    
+    <div class="relative">
+    <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+  
+    
+    
+    </div>
+    </nav>
+
+  
+<form class="flex items-center" id="search-form">   
+  <label for="simple-search" class="sr-only">Search</label>
+  <div class="relative w-full">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+      </div>
+      <input type="text" id="simple-search" style="background-color:white; color: black;" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for keywords" required>
+  </div>
+  <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      <span class="sr-only">Search</span>
+  </button>
+</form>
+
+<script>
+  function performSearch() {
+  // Get the input value from the search field
+  const searchTerm = document.getElementById('simple-search').value.trim().toLowerCase();
+
+  // Get all the paragraphs on the page
+  const paragraphs = document.getElementsByTagName('p');
+
+  // Loop through each paragraph and search for the input value
+  for (let i = 0; i < paragraphs.length; i++) {
+    const paragraph = paragraphs[i];
+    const text = paragraph.textContent.toLowerCase();
+    const index = text.indexOf(searchTerm);
+
+    // If the input value is found in the paragraph, highlight the matching text
+    if (index !== -1) {
+      const highlightedText = paragraph.innerHTML.substring(index, index + searchTerm.length);
+      const newText = paragraph.innerHTML.replace(highlightedText, '<span class="highlight">' + highlightedText + '</span>');
+      paragraph.innerHTML = newText;
+    }
+  }
+}
+
+const searchForm = document.getElementById('search-form');
+searchForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // prevent the form from submitting and reloading the page
+  performSearch(); // call the performSearch function
+});
+
+</script>
+
+<style>
+  .highlight {
+  background-color: yellow;
+}
+
+</style>
+
+    
+    
+    </div>
+    </div>
+    
+   
+   
+   
+   
+   
+    <script src="//unpkg.com/alpinejs" defer></script>
+   
+
+
+
+    <div x-data="{ open: false }" class="relative">
+      <div class="md:hidden d-flex justify-center" style="margin-left: 12px;">
+        <button @click="open = !open" type="button" class="inline-flex items-center justify-center p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+          <span class="sr-only">Open main menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg>
+        </button>
+      </div>
+      
+      <div class="md:flex md:items-center md:justify-between" :class="{ 'hidden': !open }">
+        <div class="flex items-center justify-between">
+          <div>
+
+            
+            
+          </div>
+          <div class="-mr-2">
+            <button @click="open = false" type="button" class="inline-flex items-center justify-center p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+              <span class="sr-only">Close menu</span>
+              <!-- Heroicon name: outline/x-mark -->
+              <svg id="icos" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <style>
+          svg#icos{
+            display: none;
+            visibility: hidden;
+          }
+        </style>
+    
+        <div class="mt-8 md:mt-0" :class="{ 'hidden': !open }">
+          <nav>
+            <a href="#" class="block font-medium text-base text-gray-900 hover:text-gray-700 md:inline-block md:mt-0 md:ml-6">Analytics</a>
+            <a href="#" class="block font-medium text-base text-gray-900 hover:text-gray-700 md:inline-block md:mt-0 md:ml-6">Engagement</a>
+            <a href="#" class="block font-medium text-base text-gray-900 hover:text-gray-700 md:inline-block md:mt-0 md:ml-6">Security</a>
+          </nav>
+        </div>
+    
+   
+    <!--
+    Mobile menu, show/hide based on mobile menu state.
+    
+    Entering: "duration-200 ease-out"
+    From: "opacity-0 scale-95"
+    To: "opacity-100 scale-100"
+    Leaving: "duration-100 ease-in"
+    From: "opacity-100 scale-100"
+    To: "opacity-0 scale-95"
+    -->
+    
+    </div>
+    
+   
+    </div>
+   
+
+      
+        <main class="lg:relative">
+          <div class="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
+            <div class="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
+              <h1 id="pretty" style=" font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+              class="font-extrabold text-transparent text-4xl sm:text-4xl md:text-6xl lg:text-3xl xl:text-4xl font-bold bg-clip-text bg-gradient-to-r from-rose-400  via-fuchsia-500 to-indigo-500"
+            >
+            </h1>
+            
+            <script>
+              const text = "News, Shopping, Messaging , Payments";
+              const delay = 100; // milliseconds between typing each character
+              const elem = document.getElementById("pretty");
+            
+              function typeOutText(text, index) {
+                if (index < text.length) {
+                  elem.textContent += text[index];
+                  setTimeout(typeOutText, delay, text, index + 1);
+                }
+              }
+            
+              typeOutText(text, 0);
+            </script>
+            
+             
+              <p style=" font-family: futura-pt,sans-serif;"  class="mx-auto mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
+                An app that combines payments, news, shopping, and messaging into a single platform.</p>              <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
+                <div class="rounded-full">
+                  <div class="div d-flex " style="flex-direction: row; display:flex;">
+                    <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud">
+                      <img src="https://tse1.mm.bing.net/th?id=OIP.Di6arAdur2HK-CW-hfHI6QHaDB&pid=Api&P=0" height="120" width="120" alt="">
+                    </a>    
+                    <a href="" style="margin-top: 3px;">
+                      <img src="https://tse3.mm.bing.net/th?id=OIP.aw-hudI-k4NVcShbH7o4ugHaCk&pid=Api&P=0" height="120" width="120" alt="">
+                    </a>
+                  </div>
+                  
+              </div>
+               
+              </div>
+
+              <style>
+                p.futura{
+                  font-family: 'futura-pt';
+                }
+              </style>
+            </div>
+          </div>
+          <div class="relative h-64 w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
+            <img class="absolute inset-0 h-full w-full object-cover" src="docs/iPad Air – 1.png" alt="">
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="overflow-hidden bg-white">
+        <div class="relative mx-auto max-w-7xl py-24 px-6 sm:py-32 lg:px-8 lg:py-40">
+          
+      
+          <div class="relative lg:grid lg:grid-cols-3 lg:gap-x-12 xl:gap-x-16">
+            <div class="lg:col-span-1">
+              <h2 style=" font-family: futura-pt,sans-serif;" class="text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better way to send money.</h2>
+            </div>
+            <dl class="mt-20 grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-x-12 lg:col-span-2 lg:mt-0">
+              <div>
+                <dt>
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black">
+                    <!-- Heroicon name: outline/globe-alt -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg>
+                  </div>
+                  <p style=" font-family: futura-pt,sans-serif;" class="mt-6 text-lg font-semibold leading-8 text-gray-900">Newspepper</p>
+                </dt>
+                <dd class="mt-2 text-base text-gray-600" style=" font-family: futura-pt,sans-serif;">
+                  Stay informed about the current events and news happening in our city and around the world.
+                </dd>
+              </div>
+      
+              <div>
+                <dt>
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black">
+                    <!-- Heroicon name: outline/scale -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M20 22H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1zm-1-2V4H5v16h14zM9 6v2a3 3 0 0 0 6 0V6h2v2A5 5 0 0 1 7 8V6h2z"/></svg>
+                  </div>
+                  <p style=" font-family: futura-pt,sans-serif;" class="mt-6 text-lg font-semibold leading-8 text-gray-900">Shop</p>
+                </dt>
+                <dd style=" font-family: futura-pt,sans-serif;" class="mt-2 text-base text-gray-600">
+                  Explore our boutique for a wide range of clothing and various other products to shop from.
+                </dd>
+              </div>
+      
+              <div>
+                <dt>
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black">
+                    <!-- Heroicon name: outline/bolt -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-4H8V8h3V6h2v2h1a2.5 2.5 0 0 1 2 4 2.5 2.5 0 0 1-2 4h-1v2h-2v-2zm-1-3v1h4a.5.5 0 1 0 0-1h-4zm0-3v1h4a.5.5 0 1 0 0-1h-4z"/></svg>
+                  </div>
+                  <p style=" font-family: futura-pt,sans-serif;" class="mt-6 text-lg font-semibold leading-8 text-gray-900">Payment</p>
+                </dt>
+                <dd style=" font-family: futura-pt,sans-serif;" class="mt-2 text-base text-gray-600">
+                  Make secure payments to your family, friends, or other individuals with utmost safety.
+                </dd>
+              </div>
+      
+              <div>
+                <dt>
+                  <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-black">
+                    <!-- Heroicon name: outline/envelope -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.291 20.824L2 22l1.176-5.291A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.956 9.956 0 0 1-4.709-1.176z"/></svg>
+                  </div>
+                  <p style=" font-family: futura-pt,sans-serif;" class="mt-6 text-lg font-semibold leading-8 text-gray-900">Chat</p>
+                </dt>
+                <dd style=" font-family: futura-pt,sans-serif;" class="mt-2 text-base text-gray-600">
+                  Send meaningful messages, important files, and cherished images to those who matter to you.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+    body{
+        font-family: 'Inter', sans-serif;
+        
+    }
+</style>  
+
+
+      <div class="relative overflow-hidden bg-white pt-16 pb-32">
+        <div class="relative">
+          <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+            <div class="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+              <div>
+                
+                <div class="mt-6">
+                  <h2 style=" font-family: futura-pt,sans-serif;" class="text-3xl font-bold tracking-tight mb-6 text-gray-900">
+                    Payments fast and secure
+                  </h2>
+                  <p style=" font-family: futura-pt,sans-serif;" class="mt-4 text-lg text-gray-500">
+                    Our app offers a secure and convenient way to make fast payments for a wide variety of goods and services, from online purchases to in-store transactions. <br> <br>
+                    Link your payment method and start making payments with ease. Our app also offers features to help you manage your finances, track your spending, and never miss a payment. <br><br>
+                    Download now to experience a fast and secure payment platform that eliminates transaction worries.
+                </p>
+                  
+               
+                  <div class="mt-6">
+                    <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud">
+                      <button class="m-0 p-1 rounded-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
+                    
+                        <span style=" font-family: futura-pt,sans-serif;" class="block text-black px-12 py-2 font-semibold rounded-full bg-white">
+                            Make your first transfer </span>
+                      </button>   
+                    </a>
+                                  </div>
+                </div>
+              </div>
+            
+            </div>
+
+
+            <div class="mt-12 sm:mt-16 lg:mt-0">
+              <div class="-mr-48 pl-4 sm:pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+                <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg" alt="Inbox user interface">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-24">
+          <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
+            <div class="mx-auto max-w-xl px-6 lg:col-start-2 lg:mx-0 lg:max-w-none lg:py-32 lg:px-0">
+              <div>
+               
+                <div class="mt-6">
+                  <h2 style=" font-family: futura-pt,sans-serif;" class="text-3xl font-bold tracking-tight text-gray-900">
+                    Develop with us.</h2>
+                  <p style=" font-family: futura-pt,sans-serif;" class="mt-4 text-lg text-gray-500">
+                  
+                  
+                  
+                    We're seeking talented iOS and React Native developers with a passion for cutting-edge mobile app development. <br> <br>
+                    Join our dynamic team to work on exciting projects, learn from industry experts, and create innovative, user-friendly apps. <br> <br>
+                    We offer competitive salaries, flexible work arrangements, and a range of benefits. Contact us today to take your skills to the next level!
+
+                      <div class="mt-6">
+                   <a href="docs/iPad – 1.png">
+                    <button class="m-0 p-1 rounded-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
+                    
+                      <span style=" font-family: futura-pt,sans-serif;" class="block text-black px-20  py-2 font-semibold rounded-full bg-white">
+                          Dowload the design of the app</span>
+                    </button>  
+                   </a>                </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-12 sm:mt-16 lg:col-start-1 lg:mt-0">
+              <div class="-ml-48 pr-4 sm:pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+                <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" src="docs/iPhone 14 Pro Max – 1.png" alt="Customer profile user interface">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+    <section style="width: 100%; justify-content:center; display:flex; margin-left:auto; margin-right:auto;">
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Introducing our latest promotion for our amazing desktop app! 💻🎉<br><br>For a limited time only, we are offering an incredible deal on a brand new computer when you download and sign up for our desktop app. <a href="https://t.co/kflXpxphTW">pic.twitter.com/kflXpxphTW</a></p>&mdash; aurora-x aurora (@xauroraqatar) <a href="https://twitter.com/xauroraqatar/status/1633251775200342017?ref_src=twsrc%5Etfw">March 7, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </section>
+
+    <div class="overflow-hidden bg-white py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
+          <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
+            <h2 style=" font-family: futura-pt,sans-serif;"  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our people</h2>
+            <p style=" font-family: futura-pt,sans-serif;"  class="mt-6 text-xl leading-8 text-gray-600">People should work for us because we offer a collaborative, innovative, and inclusive work environment that fosters professional growth and personal development.</p>
+            <div class="mt-10 flex">
+              <a href="docs/Présentation2.pptx" class="rounded-full bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join our team <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
+            <div class="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+              <img src="https://images.unsplash.com/photo-1539475314840-751cecc1dacd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="" class="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover">
+            </div>
+            <div class="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
+              <div class="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
+                <img src="https://images.unsplash.com/photo-1507904139316-3c7422a97a49?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1725&q=80" alt="" class="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover">
+              </div>
+              <div class="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
+                <img src="https://images.unsplash.com/photo-1550350505-553196f2a527?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80" alt="" class="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover">
+              </div>
+              <div class="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
+                <img src="https://images.unsplash.com/photo-1604433203862-93bc73b0f1e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" alt="" class="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="bg-white py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+          <h2 style=" font-family: futura-pt,sans-serif;"  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our mission</h2>
+          <div class="mt-6 flex flex-col gap-y-20 gap-x-8 lg:flex-row">
+            <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
+              <p style=" font-family: futura-pt,sans-serif;"  class="text-xl leading-8 text-gray-600">Creating a global platform for all people </p>
+              <p style=" font-family: futura-pt,sans-serif;"  class="mt-10 max-w-xl text-base leading-7 text-gray-700">
+                At X-Aurora, we are committed to providing you with a seamless and convenient experience when it comes to your everyday transactions. We are excited to announce that our app will now include four new features: shop, payments transfer, chat, and news.
+<br><br>
+With the shop feature, you can now browse and purchase products from around the world with just a few clicks. Our payments transfer system allows you to send and receive money instantly and securely, making transactions a breeze. The chat feature allows you to stay connected with friends and family no matter where you are, while the news feature keeps you up-to-date with the latest events and happenings around the world.
+<br><br>
+We believe that everyone should have access to these essential services, and that's why we're proud to offer them to all people, regardless of where they are in the world. With X-Aurora, you can now enjoy a more connected and convenient life, all in one app.
+<br><br>
+Thank you for choosing X-Aurora, and we look forward to serving you with our new features.
+              </p>
+            </div>
+            <div class="lg:flex lg:flex-auto lg:justify-center">
+              <dl class="w-64 space-y-8 xl:w-80">
+                <div class="flex flex-col-reverse gap-y-4">
+                  <dt class="text-base leading-7 text-gray-600">Transactions every 24 hours</dt>
+                  <dd class="text-5xl font-semibold tracking-tight text-gray-900">44 million</dd>
+                </div>
+    
+                <div class="flex flex-col-reverse gap-y-4">
+                  <dt class="text-base leading-7 text-gray-600">Assets under holding</dt>
+                  <dd class="text-5xl font-semibold tracking-tight text-gray-900">$119 trillion</dd>
+                </div>
+    
+                <div class="flex flex-col-reverse gap-y-4">
+                  <dt class="text-base leading-7 text-gray-600">New users annually</dt>
+                  <dd class="text-5xl font-semibold tracking-tight text-gray-900">46,000</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     
+    
+
+      <footer class="bg-white" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="space-y-8 xl:col-span-1">
+              <img class="h-10" src="Capture d’écran 2022-12-01 024708.jpg" style="height: auto; width:40px;" alt="Company name">
+              <p style=" font-family: futura-pt,sans-serif;" class="text-base text-gray-500">Making our life more easy and simple</p>
+              <div class="flex space-x-6">
+               
+              
+                <a href="https://www.instagram.com/auroraqatarx/" class="text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">Instagram</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" fill="rgba(155,163,175,1)"/></svg>
+                </a>
+
+                <a href="tel:+330767261221" class="text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">Call us</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 16.42v3.536a1 1 0 0 1-.93.998c-.437.03-.794.046-1.07.046-8.837 0-16-7.163-16-16 0-.276.015-.633.046-1.07A1 1 0 0 1 4.044 3H7.58a.5.5 0 0 1 .498.45c.023.23.044.413.064.552A13.901 13.901 0 0 0 9.35 8.003c.095.2.033.439-.147.567l-2.158 1.542a13.047 13.047 0 0 0 6.844 6.844l1.54-2.154a.462.462 0 0 1 .573-.149 13.901 13.901 0 0 0 4 1.205c.139.02.322.042.55.064a.5.5 0 0 1 .449.498z" fill="rgba(155,163,175,1)"/></svg>                </a>
+
+
+                <a href="https://www.facebook.com/profile.php?id=100090946206213" class="text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">facebook</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" fill="rgba(155,163,175,1)"/></svg>
+                </a>
+
+
+
+        
+             
+      
+                <a href="https://twitter.com/xauroraqatar" class="text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">Twitter</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z" fill="rgba(155,163,175,1)"/></svg>
+                </a>
+
+                <a href="https://www.youtube.com/channel/UC17DxYHpl7aiVl2qSUzH2yg" class="text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">YouTube</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z" fill="rgba(155,163,175,1)"/></svg>            
+                    </a>
+
+
+                   
+                    
+      
+              </div>
+
+              <div class="div d-flex " style="flex-direction: row; display:flex;">
+                <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud">
+                  <img src="https://tse1.mm.bing.net/th?id=OIP.Di6arAdur2HK-CW-hfHI6QHaDB&pid=Api&P=0" height="120" width="120" alt="">
+                </a>    
+                <a href="" style="margin-top: 3px;">
+                  <img src="https://tse3.mm.bing.net/th?id=OIP.aw-hudI-k4NVcShbH7o4ugHaCk&pid=Api&P=0" height="120" width="120" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+              <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 style=" font-family: futura-pt,sans-serif;" class="text-base font-medium text-gray-900">Solutions</h3>
+                  <ul role="list" class="mt-4 space-y-4">
+                    <li>
+                      <a id="pretty"  href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud"  class="mys text-base text-gray-500 hover:text-gray-900">Chat with your friends</a>
+                    </li>
+
+                  
+      
+                    <li>
+                      <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="text-base text-gray-500 hover:text-gray-900">Send money more easy</a>
+                    </li>
+      
+                    <li>
+                      <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="text-base text-gray-500 hover:text-gray-900">Shop</a>
+                    </li>
+      
+                    <li>
+                      <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="text-base text-gray-500 hover:text-gray-900">Newspepper</a>
+                    </li>
+
+                    <li>
+                      <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="text-base text-gray-500 hover:text-gray-900">How to send money ?</a>
+
+                      <li>
+                        <a href="https://play.google.com/store/apps/details?id=com.erivan.firebasecrud" class="text-base text-gray-500 hover:text-gray-900">Where is my order ?</a>
+                      </li>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-12 md:mt-0">
+                  <h3 style=" font-family: futura-pt,sans-serif;" class="text-base font-medium text-gray-900">Support</h3>
+                  <ul role="list" class="mt-4 space-y-4">
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">FAQ</a>
+                    </li>
+      
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Documentation</a>
+                    </li>
+      
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Investors</a>
+                    </li>
+      
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">About us</a>
+                    </li>
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Careers</a>
+                    </li>
+
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Innovation</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 style=" font-family: futura-pt,sans-serif;" class="text-base font-medium text-gray-900">Design Community</h3>
+                  <ul role="list" class="mt-4 space-y-4">
+                    <li>
+                      <a href="docs/iPad – 1.png" class="text-base text-gray-500 hover:text-gray-900">UI Kit</a>
+                    </li>
+      
+                    <li>
+                      <a href="docs/iPad – 1.png" class="text-base text-gray-500 hover:text-gray-900">Style Guide</a>
+                    </li>
+
+
+                    <li>
+                      <a href="docs/iPad – 1.png" class="text-base text-gray-500 hover:text-gray-900">Icons</a>
+                    </li>
+
+                    <li>
+                      <a href="docs/iPad – 1.png" class="text-base text-gray-500 hover:text-gray-900">Font </a>
+                    </li>
+
+                    <li>
+                      <a href="docs/iPad – 1.png" class="text-base text-gray-500 hover:text-gray-900">logo </a>
+                    </li>
+
+                    <li>
+                      <a href="docs/iPad – 1.png" class="text-base text-gray-500 hover:text-gray-900">Jobs for designers </a>
+                    </li>
+      
+      
+      
+      
+                   
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-12 md:mt-0">
+                  <h3 style=" font-family: futura-pt,sans-serif;" class="text-base font-medium text-gray-900">Legal</h3>
+                  <ul role="list" class="mt-4 space-y-4">
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Documentation</a>
+                    </li>
+      
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Terms and Privacy</a>
+                    </li>
+      
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Security</a>
+                    </li>
+
+                    
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">How to protect my account </a>
+                    </li>
+                    
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">Cookies</a>
+                    </li>
+
+                    
+                    <li>
+                      <a href="docs/Présentation2.pptx" class="text-base text-gray-500 hover:text-gray-900">How to contact us ?</a>
+                    </li>
+
+                    <style>
+                      ul li a:hover {
+border-bottom: 2px solid black;
+                      }
+                    </style>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 border-t border-gray-200 pt-8">
+            <p style=" font-family: futura-pt,sans-serif;" class="text-base text-gray-400 xl:text-center">&copy; 2020-2023 X-Aurora, Inc. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+      
+</body>
+</html>

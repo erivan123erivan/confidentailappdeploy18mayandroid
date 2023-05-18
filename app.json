@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "X",
+    "slug": "firebase-crud",
+    "version": "9.6.4",
+    "orientation": "portrait",
+    "icon": "./assets/androidicongenrato/iPhone 14 Pro Max – 1.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.erivan.firebasecrud",
+      "icon": "./assets/Icon-1024.png",
+      "buildNumber": "3.9.1", 
+      "config": {
+        "ios": {
+          "appleId": "theaurorax23@gmail.com",
+          "ascAppId": "6448678951",
+          "appleTeamId": "JP6D5PRG2Q"
+         
+        }
+      }
+    },
+    "android": {
+      "versionCode": 10,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/androidicongenrato/iPhone 14 Pro Max – 1.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.erivan.firebasecrud"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d7d77164-bf15-4c7a-bb37-6e8f1d77cf95"
+      }
+    }
+  }
+}

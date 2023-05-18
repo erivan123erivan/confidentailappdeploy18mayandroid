@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  font-family: "futura";
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+code {
+  font-family: "futura";
+}
+
+@font-face {
+  font-family: "futura";
+  src: url("./assets/fonts/FuturaCyrillicDemi.ttf");
+}

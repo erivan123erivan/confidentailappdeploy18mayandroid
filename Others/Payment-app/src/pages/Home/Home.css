@@ -1,0 +1,116 @@
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+}
+.authForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  margin: 5rem auto;
+  /* border: 1px solid gray; */
+  border-radius: 5px;
+}
+
+.authForm h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.signupFormInfos {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.signupFormInfos label {
+  font-weight: 500;
+}
+
+.signupFormInfos input {
+  outline: none;
+  border: 1px solid #D1D5DA;
+  font-size: 1rem;
+  /* background: #f2f0f0; */
+}
+
+.authForm select {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.authForm h4 {
+  width: 70%;
+}
+
+.externalAccountInfos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.cardInfos {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 1rem;
+}
+.cardInfos input {
+  font-size: 0.8rem;
+  width: 25%;
+}
+.cardInfos label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.authForm button {
+  width: 60%;
+  font-size: 1rem;
+  padding: 10px 15px;
+  background: #000;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 2rem;
+  border: 1px solid lightgray;
+}
+
+.authForm button:hover {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.HomeContainer .pTag {
+  cursor: pointer;
+}
+
+.forgetPasswordDiv {
+  width: 70%;
+}
+.forgetPasswordDiv a {
+  text-decoration: none;
+}
+
+input{
+  background-color: #ffffff;
+  color: #000;
+  border: 10px solid black;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+h2.send{
+  font-size: 23px;
+ align-items: flex-start;
+}
